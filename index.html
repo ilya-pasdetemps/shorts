@@ -3,47 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Short Stories</title>
+    <title>ilya pasdetemps stories</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div id="main-page">
         <header>
             <h1>ilya pasdetemps</h1>
-            <h2>short stories</h2>
+            <h2>stories</h2>
         </header>
         <div class="story-grid">
-            <!-- Links to short stories -->
-            <a href="#" onclick="loadStory('nowigotit.txt')">воттеперьяпоняла</a>
-            <a href="#" onclick="loadStory('onemorehelp.txt')">помогуещеразок</a>
-            <!-- Add more stories as needed -->
+            <!-- Story links will be generated here -->
         </div>
     </div>
 
     <div id="story-page" style="display: none;">
         <div id="story-header">
+            <a href="#" onclick="showMainPage()" class="home-link">ilya pasdetemps stories</a>
             <div class="burger" onclick="toggleMenu()">
                 <div></div>
                 <div></div>
                 <div></div>
             </div>
-            <h2 id="story-title"></h2>
         </div>
         <nav id="story-menu">
-            <!-- Menu for short stories -->
-            <a href="#" onclick="loadStory('nowigotit.txt')">воттеперьяпоняла</a>
-            <a href="#" onclick="loadStory('onemorehelp.txt')">помогуещеразок</a>
-            <!-- Add more stories as needed -->
+            <!-- Menu items will be generated here -->
         </nav>
-        <div id="story-content">
-            <!-- Story content will be loaded here -->
+        <div class="story-container">
+            <h2 id="story-title"></h2>
+            <div id="story-content">
+                <!-- Story content will be loaded here -->
+            </div>
         </div>
     </div>
 
     <footer>
-        <p>&copy; 2025 ilya pasdetemps. all rights reserved.</p>
+        <p>© 2025 ilya pasdetemps. all rights reserved.</p>
     </footer>
 
+    <script src="config.js"></script>
     <script src="scripts.js"></script>
 </body>
 </html>

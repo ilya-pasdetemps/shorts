@@ -1,54 +1,60 @@
+/* Base styles */
 body {
-    font-family: Arial, sans-serif;
+    font-family: "Courier New", Courier, monospace;
+    background-color: white;
     margin: 0;
     padding: 0;
+    line-height: 1.6;
 }
 
-header, footer {
+a {
+    color: inherit;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Main page styles */
+#main-page {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
     text-align: center;
-    margin: 20px;
+    margin: 40px 0;
 }
 
 .story-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Two cells per row */
-    gap: 10px;
-    padding: 20px;
-    border: 1px solid #ccc; /* Add border around the grid */
-    margin: 0 auto;
-    max-width: 600px; /* Center the grid on the page */
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
 }
 
+.story-grid a {
+    padding: 15px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+/* Story page styles */
 #story-header {
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    padding: 10px;
-    background-color: #f4f4f4;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid #ddd;
     position: sticky;
     top: 0;
-    z-index: 1000;
+    background-color: white;
+    z-index: 10;
 }
 
-#story-menu {
-    display: none; /* Hide menu by default */
-    flex-direction: column;
-    position: fixed;
-    left: 0;
-    top: 0;
-    background-color: rgba(0, 0, 0, 0.8);
-    color: white;
-    width: 100%;
-    height: 100%;
-    padding-top: 60px;
-    overflow-y: auto;
+.home-link {
+    font-weight: bold;
 }
 
-#story-content {
-    padding: 20px;
-    font-family: "Courier New", Courier, monospace;
-}
-
+/* Burger menu button */
 .burger {
     display: flex;
     flex-direction: column;
@@ -58,11 +64,12 @@ header, footer {
 .burger div {
     width: 25px;
     height: 3px;
-    background-color: #333;
-    margin: 5px;
+    background-color: black;
+    margin: 4px 0;
     transition: all 0.3s ease;
 }
 
+/* Transform burger to X when opened */
 .burger.open div:nth-child(1) {
     transform: rotate(45deg) translate(5px, 5px);
 }
@@ -75,8 +82,48 @@ header, footer {
     transform: rotate(-45deg) translate(5px, -5px);
 }
 
-@media (max-width: 600px) {
-    #story-menu {
-        display: none; /* Hide menu by default on mobile */
-    }
+/* Story menu */
+#story-menu {
+    display: none;
+    flex-direction: column;
+    padding: 20px;
+    background-color: white;
+    border-bottom: 1px solid #ddd;
+}
+
+#story-menu.open {
+    display: flex;
+}
+
+#story-menu a {
+    margin: 10px 0;
+}
+
+.current-story {
+    font-weight: normal;
+    color: #888;
+}
+
+/* Story content */
+.story-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+#story-title {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+#story-content {
+    white-space: pre-wrap;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    border-top: 1px solid #ddd;
 }
