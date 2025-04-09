@@ -3,12 +3,12 @@ const stories = [
     {
         title: 'воттеперьяпоняла',
         filename: 'nowigotit.txt',
-        wordCount: 269,
+        wordCount: 271,
     },
     {
         title: 'помогуещеразок',
         filename: 'onemorehelp.txt',
-        wordCount: 0,
+        wordCount: 250,
     },
     // Add more stories as needed
 ];

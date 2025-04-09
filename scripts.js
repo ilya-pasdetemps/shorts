@@ -92,7 +92,7 @@ function initPage() {
     stories.forEach(story => {
         const storyLink = document.createElement('a');
         storyLink.href = '#';
-        storyLink.textContent = story.title;
+        storyLink.textContent = `${story.title}\n(${story.wordCount}\u00A0words)`;
         storyLink.onclick = () => loadStory(story.filename, story.title, story.wordCount);
         storyGrid.appendChild(storyLink);
     });
