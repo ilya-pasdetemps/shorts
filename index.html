@@ -9,29 +9,30 @@
 <body>
     <div id="main-page">
         <header>
-            <h1>Author Name</h1>
-            <h2>Short Stories</h2>
+            <h1>ilya pasdetemps</h1>
+            <h2>short stories</h2>
         </header>
         <div class="story-grid">
             <!-- Links to short stories -->
             <a href="#" onclick="loadStory('nowigotit.txt')">воттеперьяпоняла</a>
             <a href="#" onclick="loadStory('onemorehelp.txt')">помогуещеразок</a>
-            <!-- <a href="#" onclick="loadStory('story2.txt')">Story 2</a> -->
             <!-- Add more stories as needed -->
         </div>
     </div>
 
     <div id="story-page" style="display: none;">
-        <div class="burger" onclick="toggleMenu()">
-            <div></div>
-            <div></div>
-            <div></div>
+        <div id="story-header">
+            <div class="burger" onclick="toggleMenu()">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <h2 id="story-title"></h2>
         </div>
         <nav id="story-menu">
             <!-- Menu for short stories -->
             <a href="#" onclick="loadStory('nowigotit.txt')">воттеперьяпоняла</a>
             <a href="#" onclick="loadStory('onemorehelp.txt')">помогуещеразок</a>
-            <!-- <a href="#" onclick="loadStory('story2.txt')">Story 2</a> -->
             <!-- Add more stories as needed -->
         </nav>
         <div id="story-content">
