@@ -9,32 +9,64 @@ header, footer {
 
 .story-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    grid-template-columns: repeat(2, 1fr); /* Two cells per row */
     gap: 10px;
     padding: 20px;
+    border: 1px solid #ccc; /* Add border around the grid */
+    margin: 0 auto;
+    max-width: 600px; /* Center the grid on the page */
 }
 
 #story-menu {
-    display: flex;
+    display: none; /* Hide menu by default */
     flex-direction: column;
     position: fixed;
     left: 0;
     top: 0;
     background-color: #f4f4f4;
     padding: 10px;
+    width: 200px;
+    height: 100%;
+    overflow-y: auto;
 }
 
 #story-content {
-    margin-left: 150px;
+    margin-left: 0;
     padding: 20px;
     font-family: "Courier New", Courier, monospace;
 }
 
+.burger {
+    display: none; /* Hide burger button by default */
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 1000;
+    cursor: pointer;
+}
+
+.burger div {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    margin: 5px;
+}
+
 @media (max-width: 600px) {
+    .burger {
+        display: block; /* Show burger button on mobile */
+    }
+
     #story-menu {
-        position: static;
-        flex-direction: row;
-        overflow-x: auto;
+        display: none; /* Hide menu by default on mobile */
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        color: white;
+        padding-top: 60px;
     }
 
     #story-content {
