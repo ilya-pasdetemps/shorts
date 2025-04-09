@@ -8,7 +8,7 @@ const stories = [
     {
         title: 'помогуещеразок',
         filename: 'onemorehelp.txt',
-        wordCount: 250,
+        wordCount: 257,
     },
     // Add more stories as needed
 ];
