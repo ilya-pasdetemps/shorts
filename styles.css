@@ -52,7 +52,7 @@ header, footer {
     margin: 5px;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 767px) {
     .burger {
         display: block; /* Show burger button on mobile */
     }
