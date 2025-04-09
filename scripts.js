@@ -42,7 +42,7 @@ function loadStory(filename, title, wordCount) {
         .then(text => {
             document.getElementById('main-page').style.display = 'none';
             document.getElementById('story-page').style.display = 'block';
-            document.getElementById('story-title').innerText = `${title} (${wordCount} words)`;
+            document.getElementById('story-title').innerText = `${title} (${wordCount}\u00A0words)`;
             document.getElementById('story-content').innerText = text;
             
             // Update menu to highlight current story
