@@ -59,19 +59,21 @@ header {
     display: flex;
     flex-direction: column;
     cursor: pointer;
+    padding: 5px;
+    z-index: 11;
 }
 
 .burger div {
-    width: 25px;
+    width: 26px;
     height: 3px;
     background-color: black;
     margin: 4px 0;
     transition: all 0.3s ease;
 }
 
-/* Transform burger to X when opened */
+/* Transform burger to X when opened - make cross symmetric */
 .burger.open div:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px);
+    transform: rotate(45deg) translate(8px, 8px); /* Adjusted for symmetry */
 }
 
 .burger.open div:nth-child(2) {
@@ -79,24 +81,41 @@ header {
 }
 
 .burger.open div:nth-child(3) {
-    transform: rotate(-45deg) translate(5px, -5px);
+    transform: rotate(-45deg) translate(8px, -8px); /* Adjusted for symmetry */
 }
 
 /* Story menu */
 #story-menu {
-    display: none;
+    display: block;
     flex-direction: column;
     padding: 20px;
+    padding-bottom: 0px;
     background-color: white;
     border-bottom: 1px solid #ddd;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    z-index: 5;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+
+    /* Setup for animation */
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.5s ease, opacity 0.3s ease;
 }
 
 #story-menu.open {
-    display: flex;
+    max-height: 500px;
+    opacity: 1;
 }
 
 #story-menu a {
     margin: 10px 0;
+    text-align: right;
+    padding-right: 40px;
+    display: block; /* Ensure links stack properly */
 }
 
 .current-story {

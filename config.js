@@ -7,6 +7,6 @@ const stories = [
     {
         title: 'помогуещеразок',
         filename: 'onemorehelp.txt'
-    }
+    },
     // Add more stories as needed
 ];

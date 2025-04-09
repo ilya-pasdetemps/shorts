@@ -21,7 +21,11 @@ function generateMenu() {
         } else {
             menuItem.href = '#';
             menuItem.textContent = story.title;
-            menuItem.onclick = () => loadStory(story.filename, story.title);
+            menuItem.onclick = () => {
+                loadStory(story.filename, story.title);
+                // Hide menu and reset burger when clicking a story link
+                hideMenu();
+            };
         }
         
         menuContainer.appendChild(menuItem);
@@ -61,8 +65,19 @@ function toggleMenu() {
     }
 }
 
+// Hide menu and reset burger icon
+function hideMenu() {
+    const menu = document.getElementById('story-menu');
+    const burger = document.querySelector('.burger');
+    menu.classList.remove('open');
+    burger.classList.remove('open');
+}
+
 // Return to main page
 function showMainPage() {
+    // Hide menu and reset burger before changing pages
+    hideMenu();
+
     document.getElementById('story-page').style.display = 'none';
     document.getElementById('main-page').style.display = 'block';
     currentStory = null;
