@@ -22,7 +22,7 @@ function generateMenu() {
             menuItem.href = '#';
             menuItem.textContent = story.title;
             menuItem.onclick = () => {
-                loadStory(story.filename, story.title);
+                loadStory(story.filename, story.title, story.wordCount);
                 // Hide menu and reset burger when clicking a story link
                 hideMenu();
             };
@@ -33,7 +33,7 @@ function generateMenu() {
 }
 
 // Load story content
-function loadStory(filename, title) {
+function loadStory(filename, title, wordCount) {
     // Find the story in our config
     currentStory = stories.find(story => story.filename === filename);
     
@@ -42,7 +42,7 @@ function loadStory(filename, title) {
         .then(text => {
             document.getElementById('main-page').style.display = 'none';
             document.getElementById('story-page').style.display = 'block';
-            document.getElementById('story-title').innerText = title;
+            document.getElementById('story-title').innerText = `${title} (${wordCount} words)`;
             document.getElementById('story-content').innerText = text;
             
             // Update menu to highlight current story
@@ -93,13 +93,22 @@ function initPage() {
         const storyLink = document.createElement('a');
         storyLink.href = '#';
         storyLink.textContent = story.title;
-        storyLink.onclick = () => loadStory(story.filename, story.title);
+        storyLink.onclick = () => loadStory(story.filename, story.title, story.wordCount);
         storyGrid.appendChild(storyLink);
     });
     
     // Generate the menu
     generateMenu();
     
+    const pageTitle = document.querySelector('title');
+    pageTitle.textContent = `${authorName} stories`;
+
+    const authorHeader = document.querySelector('header h1');
+    authorHeader.textContent = authorName;
+
+    const homeLink = document.querySelector('.home-link');
+    homeLink.innerHTML = `${authorName} stories`;
+
     // Update copyright year
     const copyrightElement = document.querySelector('footer p');
     copyrightElement.textContent = `© 2025-${getCurrentYear()} ${authorName}. all rights reserved.`;
