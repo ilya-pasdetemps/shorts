@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Short Stories</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="main-page">
+        <header>
+            <h1>Author Name</h1>
+            <h2>Short Stories</h2>
+        </header>
+        <div class="story-grid">
+            <!-- Links to short stories -->
+            <a href="#" onclick="loadStory('nowigotit.txt')">воттеперьяпоняла</a>
+            <!-- <a href="#" onclick="loadStory('story2.txt')">Story 2</a> -->
+            <!-- Add more stories as needed -->
+        </div>
+    </div>
+
+    <div id="story-page" style="display: none;">
+        <nav id="story-menu">
+            <!-- Menu for short stories -->
+            <a href="#" onclick="loadStory('nowigotit.txt')">воттеперьяпоняла</a>
+            <!-- <a href="#" onclick="loadStory('story2.txt')">Story 2</a> -->
+            <!-- Add more stories as needed -->
+        </nav>
+        <div id="story-content">
+            <!-- Story content will be loaded here -->
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 ilya pasdetemps. all rights reserved.</p>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
